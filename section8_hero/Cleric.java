@@ -1,8 +1,8 @@
 public class Cleric {
   String name = "呉山";
-  final int MAXHP = 50;
+  final static int MAXHP = 50;
   int hp = 20;
-  final int MAXMP = 10;
+  final static int MAXMP = 10;
   int mp = 8;
 
   public void selfAid() {
