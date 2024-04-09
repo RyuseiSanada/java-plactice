@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 public class Main {
 
   public static void stringConnect() {
@@ -26,11 +29,28 @@ public class Main {
     }
   }
 
+
   public static void main(String[] args) {
     stringConnect();
 
     makeFileAddress("c:¥rightFolder¥", "sanada.tex");
     makeFileAddress("c:¥rightFolder", "sanachan.tex");
+
+    //現在の100日後を西暦2024年09月24日で出力
+    //現在の日時を取得
+    Date now = new Date();
+    //Calendarにセット
+    Calendar c = Calendar.getInstance();
+    c.setTime(now);
+    //日を取得
+    int day = c.get(Calendar.DAY_OF_MONTH);
+    //100を足してCalendarにセット
+    c.set(Calendar.DAY_OF_MONTH, day + 100);
+    //Dateに変換
+    Date day_after_100 = c.getTime();
+    //formatで表示
+    SimpleDateFormat f = new SimpleDateFormat("西暦yyyy年MM月dd日");
+    System.out.println(f.format(day_after_100));
   }
 
 
