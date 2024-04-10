@@ -1,4 +1,4 @@
-import  java.util.ArrayList;
+import  java.util.*;
 
 public class Main {
   public static void main(String[] args) {
@@ -12,5 +12,12 @@ public class Main {
       System.out.println(hero.getName());
     }
     
+    Map<Hero, Integer> heros_defeat = new HashMap<Hero, Integer>();
+    heros_defeat.put(h1, 10);
+    heros_defeat.put(h2, 2);
+
+    for (Hero hero : heros_defeat.keySet()) {
+      System.out.println(hero.getName() + ":" + heros_defeat.get(hero));
+    }
   }
 }
